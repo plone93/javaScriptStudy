@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>내장객체</title>
+ </head>
+ <body>
+ 	<script>
+		var v1 = new Date(); // 현재 날짜 및 시간 표시
+		var v2 = new Date(2020,0,1,0,0,1); // 2019년 1월 1일 0시 0분 1초 표시
+		var v3 = new Date(500000000); // 1970년 1월 1일 이후의 경과 시간
+		var v4 = new Date(2000,12,25); //지정된 시간표시
+		
+		document.write(v1+"<br/>");
+		document.write(v2+"<br/>");
+		document.write(v3+"<br/>");
+		document.write(v4+"<br/>");
+
+		var cYear = new Date();
+		var nYear = new Date(2019,0,1);
+
+		var date = cYear.getDate();	//정보를 1-31 사이의 정수로 반환	
+		var year = cYear.getFullYear();
+		var month = cYear.getMonth(); // 정보를 0-11 사이의 정수로 변환
+		var day = cYear.getDay();//요일 월1 화2 수3 목4 금5 토6 일0  정보를 0-6사이로 반환
+		var hour = cYear.getHours();
+		var minute = cYear.getMinutes();
+
+		var days;
+
+		switch(day) {
+			case 0: 
+				days = "일";
+				break;
+			case 1: 
+				days = "월";
+				break;
+			case 2: 
+				days = "화";
+				break;
+			case 3: 
+				days = "수";
+				break;
+			case 4: 
+				days = "목";
+				break;
+			case 5: 
+				days = "금";
+				break;
+			case 6: 
+				days = "토";
+				break;
+			}
+
+	var leftedTime = nYear.getTime() - cYear.getTime();
+	var leftedDays = Math.floor(leftedTime / (24*60*60*1000));
+
+	document.write("오늘은"+year+"년"+month+"월"+date+"일("+days+"요일)이고<br/>");
+	document.write("현재시간은 : "+hour+"시"+minute+"분입니다<br/>");
+	document.write("새해첫날까지는 "+leftedDays+"일이 남았습니다<br/>");
+
+	document.write("PI : "+Math.PI+"<br/>");
+	document.write("2의제곱근 : "+Math.SQRT2+"<br/>");
+	document.write("round(4.7) : "+Math.round(4.7)+"<br/>");
+	document.write("abs(-4.7) : "+Math.abs(4.7)+"<br/>");
+	document.write("ceil(4.4) : "+Math.ceil(4.4)+"<br/>");
+	document.write("floor(4.7) : "+Math.floor(4.7)+"<br/>");
+
+	</script>
+	
+		<h3>이번주 행운의 로또 번호</h3>
+		<button onclick="luckyNumber();">시작</button>
+
+		<script>
+			function luckyNumber() {
+				var num = new Array();
+
+				for(i=1; i<=6; i++){
+					num[i] = Math.floor(Math.random() * 44)+1;
+
+					for(j=1; j<i; j++){
+						if(num[j] == num[i]){
+							i = 1;
+							break;
+							}
+						}
+					}
+
+				document.write("<h3>행운번호</h3>");
+				for(i=1; i<=num.length-1; i++){
+					document.write(num[i]+" ");
+					}
+				}
+		</script>
+ </body>
+</html>

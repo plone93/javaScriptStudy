@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>객체지향</title>
+ <script>
+	function jumsu(name, kor, eng, mat){
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+		}
+	
+	function Print(){
+		document.write("com : "+this.brand+", ");
+		document.write("product : "+this.product+", ");
+		document.write("price : "+this.price+"<p>");
+		}
+	
+	function TV(brand, product, price){
+		var brand;
+		var product;
+		var price;
+
+		//생성자
+		this.brand = brand;
+		this.product = product;
+		this.price = price;
+
+		//함수 가르키기
+		this.Print = Print;
+
+		document.write("com : "+brand+", ");
+		document.write("product : "+product+", ");
+		document.write("price : "+price+"<p>");
+		}
+ </script>
+ 
+ </head>
+ <body>
+	<script>
+		hong = new jumsu("박장수",90,80,70);
+		kim = new jumsu("강석현",60,80,90);
+		document.write("<h3>");
+		document.write("name : "+ hong.name + "<br/>");
+		document.write("kor : "+ hong.kor + "<br/>");
+		document.write("eng : "+ hong.eng + "<br/>");
+		document.write("mat : "+ hong.mat + "<br/>");
+
+	</script>
+
+	<script>
+		TV1 = new TV("samsung","PAVV","900000원");
+		TV2 = new TV("lg","canvas","900000원");
+		document.write("<h2>TV1</h2>");
+		TV1.Print();
+		document.write("<h2>TV2</h2>");
+		TV2.Print();
+	</script>
+ </body>
+</html>

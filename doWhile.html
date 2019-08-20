@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>doWhile</title>
+
+  <script>
+  //1~20까지 홀수의 합을 구하시오
+	var cnt =1;
+	var sum = 0;
+	
+	do{
+		if(cnt%2 == 1){
+			sum += cnt;
+			}
+		
+		cnt += 1;
+	}while(cnt <= 20);
+	document.write("홀수의 합은"+sum+"입니다");
+  </script>
+
+  <script>
+
+  for(i=0; i<10; i++){
+	  for(j=0; j<i; j++){
+		  document.write("*");
+		  }
+	document.write("<br/>");
+  }
+    for(i=10; i>1; i--){
+	  for(j=0; j<i; j++){
+		  document.write("*");
+		  }
+	document.write("<br/>");
+  }
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
