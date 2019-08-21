@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>폼연동</title>
+</head>
+<body>
+	<form action="">
+		중간성적 : <input type="text" id="mid"><br>
+		기말성적 : <input type="text" id="last"><br>
+		<button onClick="f1();">처리</button>
+		<div id="d1"></div>
+	</form>
+
+	<script>
+		function f1() {
+			var avg, grade, result;
+			var s1 = document.getElementById('mid').value;
+			var s2 = document.getElementById('last').value;
+			var pTage = document.getElementById('d1');
+
+			avg = (Number(s1)+Number(s2)) / 2;
+
+			if(avg >=90) {
+				grade = 'A';
+				}else if(avg>=80) {
+					grade = 'B';
+					} else {
+						grade = 'F';
+						}
+			result = "<br>평균 : "+avg;
+			result = result+"<br> 학점 : "+grade;
+			pTage.innerHTML = result;
+			}
+	</script>
+</body>
+</html>

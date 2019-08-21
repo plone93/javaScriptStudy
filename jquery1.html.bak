@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+	<h3 id="t1">자바스크립트 프로그래밍</h3>
+	<button onClick="$('#t1').html('jquery프로그래밍');">내용변경</button>
+	<button onClick="$('#t1').css('color','#f00');">스타일변경</button> 
+	
+	<button id="b1">내용변경</button>
+	<button id="b2">스타일변경</button> 
+
+	<script>
+		$(document).ready(function(){
+			$('#b1').on('mouseover', function() {
+				$('#t1').html('jquery programming');
+				});
+
+			$('#b2').on('click', function() {
+				$('#t1').css('color','#f00');
+				});
+			});
+	</script>
+
+	<hr>
+	
+	<h3 id="t2">자바스크립트 프로그래밍</h3>
+	<button id="b3">HTML 삽입</button>
+	<button id="b4">TEXT 삽입</button> 
+
+	<script>
+		$(document).ready(function(){
+			$('#b3').on('mouseover', function() {
+				$('#t2').html('<h3>jquery programming</h3>');
+				});
+
+			$('#b4').on('click', function() {
+				$('#t2').text('<h3>jquery programming</h3>');
+				});
+			});
+	</script>
+
+	<hr>
+	
+
+	<h3 id="t3">자바스크립트 프로그래밍</h3>
+	<button id="b5">On</button>
+	<button id="b6">Off</button> 
+
+	<img src="off.png" alt="" id="light">
+
+	<script>
+		$(document).ready(function(){
+			$('#b5').on('click', function() {
+				$('#light').attr("src", "on.jpg");
+				});
+
+			$('#b6').on('click', function() {
+				$('#light').attr("src", "off.jpg");
+				});
+			});
+	</script>	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>웹프로그래밍</h3>
+	<ul id="t1">클라이언트 프로그래밍
+		<li>ㅁㅂㅁ</li>
+		<li>ㅇㅂㅇ</li>
+		<li>ㅇㅅㅇ</li>
+	</ul>
+
+	<script>
+		var tag1 = document.getElementById('t1');
+		document.write('<hr>dom트리탐색<br/>');
+		document.write('노드의 자식 노드 개수 : '+tag1.childNodes.length+'<br/>');
+
+		for(i=0; i<childNodes.length; i++) {
+			document.write(i+'번째 자식노드 : '+tag1.childNodes[i]+'<br/>');
+			}
+	</script>
+</body>
+</html>

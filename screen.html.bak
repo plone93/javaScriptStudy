@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>스크린 객체</title>
+
+	<script>
+		function halfwindow() {
+			var w1 = window.open('', '', 'width=200,  height=300'); //새창 띄우기
+			var width = screen.width / 2; //화면의 가로 크기 나누기 2
+	
+			w1.top += 30;
+			w1.left += 30;
+			w1.resizeTo(width, height);
+			}
+	</script>
+</head>
+<body>
+	<button onclick="halfwindow();">윈도우창</button>
+</body>
+</html>
