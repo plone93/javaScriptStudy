@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+	<style>
+		#base span {padding:10px 12px; background:#00f;}
+		#base span:nth-child(2n) {padding:10px 12px; background:#f00;}
+	</style>
+
+</head>
+<body>
+	<h3>노드 추가</h3>
+	<div id="base" style="border:1px solid dashed; padding:10px;">
+		<span>노드1</span><span>노드2</span><span>노드3</span><span>노드4</span>
+		<span class="aaa"></span><span>노드5</span>
+
+		
+
+		<button id="b1">버튼1</button><button id="b2">버튼2</button>
+		<button id="b3">버튼3</button><button id="b4">버튼4</button>
+	</div>
+	<hr>
+	<script>
+		$(function() {
+			var newObj = $('.aaa').text('object');
+			$(newObj).css({'background':'#0f0'});
+			
+			$('#b1').click(function() {
+				$(newObj).insertBefore($('#base'));
+			});
+
+			$('#b2').click(function() {
+				$(newObj).prependTo($('#base'));
+			});
+
+			$('#b3').click(function() {
+				$('#base').after(newObj);
+			});
+
+			$('#b4').click(function() {
+				$('#base').append(newObj);
+			});
+		});
+
+	</script>
+
+	<hr>
+
+	여행하고 싶은 지역 : <input type="text" id="t1">
+	<button id="b5">추가</button>
+
+	<ul id="tt">
+		
+	</ul>
+
+	<script>
+		$(function() {
+			$('#b5').click(function() {
+				var str1 = $('#t1').val();
+				$('#tt').append($('<li style="color:#00f;"></li>').html(str1));
+				});
+			});
+	</script>
+
+	<hr>
+
+	<p id="p1">html5</p>
+	<p id="p2">css3</p>
+	<p id="p3">java</p>
+	<button id="z1">요소삭제와 요소 복제</button>
+
+	 <script>
+		$(function() {
+			$('#z1').click(function() {
+				$('#p2').remove();
+				$('#p1').clone().appendTo('#p3');
+				});
+			});
+	 </script>
+
+</body>
+</html>

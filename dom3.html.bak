@@ -9,7 +9,7 @@
 		중간성적 : <input type="text" id="mid"><br>
 		기말성적 : <input type="text" id="last"><br>
 		<button onClick="f1();">처리</button>
-		<div id="d1"></div>
+		<span id="d1"></span>
 	</form>
 
 	<script>
